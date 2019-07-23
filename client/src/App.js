@@ -9,6 +9,10 @@ import Logout from './components/Authentication/Logout'
 import './home.css'
 import Home from './components/homepage'
 
+import Menu from './menu'
+
+
+
 import Stay from './components/stay'
 
 
@@ -88,13 +92,23 @@ class App extends React.Component{
       <Route path="/menus" component={MenuForm} />
       <Route path="/reserve" component={Reserve}/>
       <Route path="/client" component={ClientPage}/>
+      
       <Home/>
       
-      {/* <Route path="/stay" component={Stay}/> */}
-      {/* <Route path="/menus" component={MenuForm} />  */}
     
-      {/* <Route path="/menus/edit/:id" component={MenuEdit}/> */}
-      {/* <Home/> */}
+
+      <Route path="/menus" component={MenuForm} /> 
+      
+    
+      <Route path="/menus/edit/:id" component={MenuEdit}/>
+  
+     
+
+      
+      <AdminPage/>
+ 
+
+
     </Switch>
 
     </BrowserRouter>
