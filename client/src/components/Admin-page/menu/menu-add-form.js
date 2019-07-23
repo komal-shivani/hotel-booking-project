@@ -1,5 +1,6 @@
 import React from 'react'
 import './menu.css'
+import axios from 'axios'
 
 class MenuAddform extends React.Component{
     constructor(){
@@ -30,9 +31,18 @@ class MenuAddform extends React.Component{
             introduction:this.state.introduction
         }
        console.log(formData)
-       this.props.handleSubmit(formData)
-        
+       this.props.handleSubmit(formData)  
     }
+
+    componentDidMount(){
+        axios.get('http://localhost:3006/cuisines')
+        .then(response=>{
+            this.setState(()=>({
+                cuisines:response.data
+            }))
+        })
+    }
+
     render(){
         return(
             <div className="menuaddform" >

@@ -33,9 +33,10 @@ class MenuEdit extends React.Component{
         .then(response=>{
             if(response.data.hasOwnProperty('error')){
                 console.log(response.data.errors)
-            } else{
-                this.props.history.push(`menus`)
             }
+            //  else{
+            //     this.props.history.push(`menus`)
+            // }
         })
     }
     render(){

@@ -6,8 +6,9 @@ class MenuNew extends React.Component {
   constructor() {
     super();
     this.state = {
-      menus: []
-    };
+      menus: [],
+      menu:{}
+    }
   }
 
   componentDidMount() {
@@ -19,6 +20,12 @@ class MenuNew extends React.Component {
         menus: response.data
       }));
     });
+  }
+
+  handleDelete=(menu)=>{
+    console.log(menu)
+    const confirmRemove=window.confirm('Are You Sure?')
+    
   }
 
   handleSubmit = formData => {
@@ -66,7 +73,7 @@ class MenuNew extends React.Component {
                           </button>
                           <button
                             className="btn btn-info"
-                            onClick={this.buttonChange}
+                            onClick={this.handleDelete}
                           >
                             Delete
                           </button>
@@ -85,7 +92,6 @@ class MenuNew extends React.Component {
                 {/* </img> */}
               </div>
             </div>
-            1{" "}
           </div>
         </div>
       </div>
